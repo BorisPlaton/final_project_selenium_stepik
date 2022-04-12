@@ -11,7 +11,6 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
-        # time.sleep(5)
 
     def is_element_present(self, how, what):
         try:
@@ -19,3 +18,7 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def get_element(self, how, what):
+        if self.is_element_present(how, what):
+            return self.browser.find_element(how, what)

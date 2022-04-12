@@ -33,3 +33,14 @@ class ProductPage(BasePage):
     def click_add_to_cart_button(self):
         self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON).click()
         self.solve_quiz_and_get_code()
+
+    def check_alerts_after_adding_book(self):
+        assert self.is_element_present(*ProductPageLocators.FIRST_ALERT), "First alert isn't founded"
+        assert self.is_element_present(*ProductPageLocators.SECOND_ALERT), "Second alert isn't founded"
+        assert self.is_element_present(*ProductPageLocators.THIRD_ALERT), "Third alert isn't founded"
+
+    def check_book_title_at_first_alert(self):
+        assert self.get_element(*ProductPageLocators.BOOK_TITLE_FIRST_ALERT).text == self.get_element(*ProductPageLocators.BOOK_TITLE).text
+
+    def check_book_price_at_third_alert(self):
+        assert self.get_element(*ProductPageLocators.PRICE_THIRD_ALERT).text == self.get_element(*ProductPageLocators.BOOK_PRICE).text
