@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -19,5 +17,4 @@ def browser(request):
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
-    # time.sleep(3)
     driver.quit()

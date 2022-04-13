@@ -1,5 +1,4 @@
 from . import BasePage
-from .locators import MainPageLocators
 
 
 class MainPage(BasePage):
