@@ -1,4 +1,5 @@
 import random
+import time
 
 import pytest
 
@@ -7,7 +8,6 @@ from .pages.basket_page import BasketPage
 from .pages import ProductPage
 
 
-@pytest.mark.new
 class TestUserAddToBasketFromProductPage:
 
     @pytest.fixture(autouse=True, scope="function")
@@ -15,8 +15,8 @@ class TestUserAddToBasketFromProductPage:
         link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
         reg_page = LoginPage(browser, link)
         reg_page.open()
-        reg_page.register_new_user(f"enedrink{random.randint(2, 10000)}@email.com", "super_password")
-        reg_page.should_be_logout_link()
+        reg_page.register_new_user(f"enedrink{str(time.time())}@email.com", "super_password")
+        reg_page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"

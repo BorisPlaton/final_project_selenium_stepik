@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    LOGOUT_LINK = (By.ID, "logout_link")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini a")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
