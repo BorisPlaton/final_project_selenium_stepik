@@ -17,3 +17,9 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Should be a register form"
+
+    def register_new_user(self, email, password):
+        self.get_element(*LoginPageLocators.REGISTER_EMAIL_INPUT).send_keys(email)
+        self.get_element(*LoginPageLocators.REGISTER_PASSWORD_INPUT).send_keys(password)
+        self.get_element(*LoginPageLocators.REGISTER_PASSWORD_CONFIRM_INPUT).send_keys(password)
+        self.get_element(*LoginPageLocators.REGISTER_SUBMIT_BUTTON).click()
