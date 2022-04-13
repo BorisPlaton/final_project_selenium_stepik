@@ -1,10 +1,3 @@
-import math
-
-from selenium.common.exceptions import NoAlertPresentException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 from . import BasePage
 from .locators import ProductPageLocators
 

@@ -19,4 +19,5 @@ def browser(request):
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
+    # time.sleep(3)
     driver.quit()
