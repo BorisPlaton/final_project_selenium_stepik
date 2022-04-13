@@ -40,7 +40,12 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.THIRD_ALERT), "Third alert isn't founded"
 
     def check_book_title_at_first_alert(self):
-        assert self.get_element(*ProductPageLocators.BOOK_TITLE_FIRST_ALERT).text == self.get_element(*ProductPageLocators.BOOK_TITLE).text, "Book title isn't equal"
+        assert self.get_element(*ProductPageLocators.BOOK_TITLE_FIRST_ALERT).text == self.get_element(
+            *ProductPageLocators.BOOK_TITLE).text, "Book title isn't equal"
 
     def check_book_price_at_third_alert(self):
-        assert self.get_element(*ProductPageLocators.PRICE_THIRD_ALERT).text == self.get_element(*ProductPageLocators.BOOK_PRICE).text, "Book price isn't equal"
+        assert self.get_element(*ProductPageLocators.PRICE_THIRD_ALERT).text == self.get_element(
+            *ProductPageLocators.BOOK_PRICE).text, "Book price isn't equal"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.FIRST_ALERT), "Success message is presented, but should not be"
