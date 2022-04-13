@@ -3,10 +3,15 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini a")
 
 
 class MainPageLocators:
-    LOGIN_LINK = (By.ID, "login_link")
+    pass
+
+
+class BasketPageLocators:
+    BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner p")
 
 
 class LoginPageLocators:
@@ -24,4 +29,3 @@ class ProductPageLocators:
     PRICE_THIRD_ALERT = (By.CSS_SELECTOR, "div#messages div.alert:nth-child(3) strong")
     BOOK_TITLE = (By.CSS_SELECTOR, ".product_main h1")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
-
